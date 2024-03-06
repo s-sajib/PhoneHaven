@@ -1,19 +1,26 @@
 import Image from "next/image";
 import logo from "../../assets/images/logo_dark.svg"
+import Link from "next/link";
 const Navbar = () => {
+  const navbarItems = [
+    {
+    label: "Home",
+    link:"/"
+  },
+    {
+    label: "About",
+    link:"/about"
+  },
+    {
+    label: "Account",
+    link:"/account"
+  },
+]
   return <nav className="mx-32 my-8">
   <div className="flex justify-between align-middle">
-    <Image src={logo} alt="logo" width={150} height={93} />
-  <ul className="flex justify-evenly space-x-24">
-    <li>
-      Home
-    </li>
-    <li>
-      About
-    </li>
-    <li>
-      Account
-    </li>
+    <Image src={logo} alt="logo" width={200} height={150} />
+  <ul className="flex justify-evenly space-x-12 text-[#25C7FA]">
+    {navbarItems?.map(menuItem => <li key={menuItem.link}><Link href={menuItem.link}>{menuItem.label}</Link></li>)}
   </ul>
   </div>
   </nav>;
