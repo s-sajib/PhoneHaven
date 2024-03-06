@@ -18,7 +18,7 @@ const Navbar = () => {
 ]
   return <nav className="mx-32 my-8">
   <div className="flex justify-between align-middle">
-    <Image src={logo} alt="logo" width={200} height={150} />
+    <Link href="/"><Image src={logo} alt="logo" width={200} height={150} /></Link>
   <ul className="flex justify-evenly space-x-12 text-[#25C7FA]">
     {navbarItems?.map(menuItem => <li key={menuItem.link}><Link href={menuItem.link}>{menuItem.label}</Link></li>)}
   </ul>
